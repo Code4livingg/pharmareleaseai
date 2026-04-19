@@ -1,0 +1,17 @@
+__pycache__/
+.mplconfig/
+.streamlit/
+notebooks/
+data/raw/
+reports/figures/encapsulation_vs_release.png
+reports/figures/feature_importance.png
+reports/figures/hist_*.png
+reports/figures/loading_vs_release.png
+reports/figures/outlier_boxplots.png
+reports/figures/pairplot_top_features.png
+reports/figures/partial_dependence.png
+reports/figures/particle_size_vs_release.png
+reports/figures/polymer_vs_release.png
+reports/figures/shap_summary.png
+reports/figures/time_vs_release.png
+Explo_Midsem_Report_Advika.pdf
