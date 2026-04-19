@@ -1,0 +1,271 @@
+{
+  "dataset_summary": {
+    "selected_sheet": "Sheet1",
+    "sheet_scores": {
+      "Sheet1": 4948.0
+    },
+    "rows": 4909,
+    "columns": 12,
+    "target_column": "Release",
+    "time_column": "Time",
+    "numeric_columns": [
+      "Drug MW",
+      "Drug TPSA",
+      "Drug LogP",
+      "Polymer MW",
+      "LA/GA",
+      "Initial Drug-to-Polymer Ratio",
+      "Particle Size",
+      "Drug Loading Capacity",
+      "Drug Encapuslation Efficiency",
+      "Solubility Enhancer Concentration",
+      "Time",
+      "Release"
+    ],
+    "categorical_columns": [],
+    "identifier_columns": [],
+    "missing_report": {
+      "Drug MW": 0,
+      "Drug TPSA": 0,
+      "Drug LogP": 0,
+      "Polymer MW": 0,
+      "LA/GA": 0,
+      "Initial Drug-to-Polymer Ratio": 0,
+      "Particle Size": 0,
+      "Drug Loading Capacity": 0,
+      "Drug Encapuslation Efficiency": 0,
+      "Solubility Enhancer Concentration": 0,
+      "Time": 0,
+      "Release": 0
+    },
+    "duplicate_rows_removed": 4,
+    "outlier_report": {
+      "Drug MW": 491,
+      "Drug TPSA": 600,
+      "Drug LogP": 321,
+      "Polymer MW": 439,
+      "LA/GA": 0,
+      "Initial Drug-to-Polymer Ratio": 787,
+      "Particle Size": 254,
+      "Drug Loading Capacity": 132,
+      "Drug Encapuslation Efficiency": 12,
+      "Solubility Enhancer Concentration": 1125,
+      "Time": 213
+    },
+    "variable_descriptions": {
+      "Drug MW": "Numeric formulation or process descriptor used for analysis and modelling.",
+      "Drug TPSA": "Numeric formulation or process descriptor used for analysis and modelling.",
+      "Drug LogP": "Numeric formulation or process descriptor used for analysis and modelling.",
+      "Polymer MW": "Numeric formulation or process descriptor used for analysis and modelling.",
+      "LA/GA": "Numeric formulation or process descriptor used for analysis and modelling.",
+      "Initial Drug-to-Polymer Ratio": "Numeric formulation or process descriptor used for analysis and modelling.",
+      "Particle Size": "Numeric formulation or process descriptor used for analysis and modelling.",
+      "Drug Loading Capacity": "Numeric formulation or process descriptor used for analysis and modelling.",
+      "Drug Encapuslation Efficiency": "Numeric formulation or process descriptor used for analysis and modelling.",
+      "Solubility Enhancer Concentration": "Numeric formulation or process descriptor used for analysis and modelling.",
+      "Time": "Time-related process variable influencing release kinetics.",
+      "Release": "Primary response variable representing drug release behaviour."
+    }
+  },
+  "eda_outputs": {
+    "feature_correlations": {
+      "Time": 0.4339675980103342,
+      "Drug Encapuslation Efficiency": -0.08716923464915377,
+      "LA/GA": -0.05363172411560823,
+      "Solubility Enhancer Concentration": -0.040567080959037494,
+      "Particle Size": -0.039484607407273255,
+      "Polymer MW": -0.03543300741604389,
+      "Initial Drug-to-Polymer Ratio": 0.03513008981337793,
+      "Drug LogP": -0.03258764068429058,
+      "Drug Loading Capacity": -0.01717360897561937,
+      "Drug MW": -0.01711005509364046,
+      "Drug TPSA": 0.0026301726579372304
+    },
+    "histogram_paths": [
+      "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/hist_drug_mw.png",
+      "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/hist_drug_tpsa.png",
+      "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/hist_drug_logp.png",
+      "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/hist_polymer_mw.png",
+      "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/hist_la_ga.png",
+      "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/hist_initial_drug_to_polymer_ratio.png",
+      "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/hist_particle_size.png",
+      "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/hist_drug_loading_capacity.png"
+    ],
+    "heatmap_path": "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/correlation_heatmap.png",
+    "pairplot_path": "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/pairplot_top_features.png",
+    "scatter_paths": {
+      "time_vs_release": "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/time_vs_release.png",
+      "particle_size_vs_release": "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/particle_size_vs_release.png",
+      "loading_vs_release": "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/loading_vs_release.png",
+      "encapsulation_vs_release": "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/encapsulation_vs_release.png",
+      "polymer_vs_release": "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/polymer_vs_release.png"
+    },
+    "boxplot_path": "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/outlier_boxplots.png",
+    "grouped_trend_path": null,
+    "insights": [
+      "Time shows a positive association with Release (Pearson r=0.434).",
+      "Drug Encapuslation Efficiency shows a negative association with Release (Pearson r=-0.087).",
+      "LA/GA shows a negative association with Release (Pearson r=-0.054).",
+      "Time appears to be a major driver of release kinetics, with correlation magnitude 0.434.",
+      "Particle-size-related behaviour suggests larger values are linked to lower observed release in this dataset.",
+      "Polymer-related descriptors appear influential enough to warrant mechanistic interpretation during formulation optimisation."
+    ]
+  },
+  "modelling_outputs": {
+    "model_results": [
+      {
+        "Model": "Random Forest",
+        "R2": 0.9143986479051214,
+        "RMSE": 0.097861695443484,
+        "MAE": 0.061777219152133606,
+        "CV_Mean_R2": 0.8902570362875375,
+        "CV_Mean_RMSE": 0.10758230620306863,
+        "CV_Mean_MAE": 0.0674903320260549
+      },
+      {
+        "Model": "MLP Regressor",
+        "R2": 0.8037655295801676,
+        "RMSE": 0.14816992878635787,
+        "MAE": 0.11339270413084472,
+        "CV_Mean_R2": 0.7582368026569213,
+        "CV_Mean_RMSE": 0.15955017950181985,
+        "CV_Mean_MAE": 0.12150126036458372
+      },
+      {
+        "Model": "Gradient Boosting",
+        "R2": 0.779028429516328,
+        "RMSE": 0.15723188623822912,
+        "MAE": 0.12207749877366668,
+        "CV_Mean_R2": 0.7601597692101962,
+        "CV_Mean_RMSE": 0.15918838107576863,
+        "CV_Mean_MAE": 0.12444598618284805
+      },
+      {
+        "Model": "SVR",
+        "R2": 0.7534925862016459,
+        "RMSE": 0.16606855853029104,
+        "MAE": 0.12786610616204822,
+        "CV_Mean_R2": 0.7158458076226377,
+        "CV_Mean_RMSE": 0.17316375562851466,
+        "CV_Mean_MAE": 0.1319491147783658
+      },
+      {
+        "Model": "Ridge",
+        "R2": 0.26029619847144214,
+        "RMSE": 0.2876744879003686,
+        "MAE": 0.24968340348820267,
+        "CV_Mean_R2": 0.21024088683410155,
+        "CV_Mean_RMSE": 0.28893958175821743,
+        "CV_Mean_MAE": 0.24879335096234864
+      },
+      {
+        "Model": "Linear Regression",
+        "R2": 0.2602862387974354,
+        "RMSE": 0.28767642457723125,
+        "MAE": 0.24967352881658172,
+        "CV_Mean_R2": 0.21022201936747759,
+        "CV_Mean_RMSE": 0.28894291854250825,
+        "CV_Mean_MAE": 0.24878333820058857
+      },
+      {
+        "Model": "Lasso",
+        "R2": -0.0013321174816391945,
+        "RMSE": 0.33470445770382307,
+        "MAE": 0.2947509712910951,
+        "CV_Mean_R2": -0.004281710637958324,
+        "CV_Mean_RMSE": 0.3258160074244133,
+        "CV_Mean_MAE": 0.28693176006702276
+      }
+    ],
+    "best_model_name": "Random Forest",
+    "tuned_params": {
+      "model__max_depth": null,
+      "model__min_samples_split": 2,
+      "model__n_estimators": 400
+    },
+    "tuned_metrics": {
+      "R2": 0.914618754411126,
+      "RMSE": 0.09773579871644261,
+      "MAE": 0.061658969335925184,
+      "CV_Best_R2": 0.8903720549820686
+    },
+    "prediction_interval": 0.2120171400273114,
+    "feature_columns": [
+      "Drug MW",
+      "Drug TPSA",
+      "Drug LogP",
+      "Polymer MW",
+      "LA/GA",
+      "Initial Drug-to-Polymer Ratio",
+      "Particle Size",
+      "Drug Loading Capacity",
+      "Drug Encapuslation Efficiency",
+      "Solubility Enhancer Concentration",
+      "Time"
+    ],
+    "pharma_insights": [
+      "Increasing Particle Size tends to decrease observed drug release in the current dataset.",
+      "Higher loading correlates with lower release, subject to the formulation range represented in the source data.",
+      "Encapsulation efficiency is associated with improved retention and slower release in this modelling workflow.",
+      "Polymer-related descriptors materially influence release, indicating matrix composition contributes to sustained-release performance."
+    ]
+  },
+  "explainability_outputs": {
+    "importance_table": [
+      {
+        "feature": "Time",
+        "importance": 1.5292865669736977
+      },
+      {
+        "feature": "Polymer MW",
+        "importance": 0.20099727839325388
+      },
+      {
+        "feature": "Drug Encapuslation Efficiency",
+        "importance": 0.1689743386835199
+      },
+      {
+        "feature": "Drug MW",
+        "importance": 0.11138591333224805
+      },
+      {
+        "feature": "Drug Loading Capacity",
+        "importance": 0.07008093093471982
+      },
+      {
+        "feature": "Particle Size",
+        "importance": 0.05483804464355897
+      },
+      {
+        "feature": "Initial Drug-to-Polymer Ratio",
+        "importance": 0.04097915440757248
+      },
+      {
+        "feature": "Drug TPSA",
+        "importance": 0.03666305592229589
+      },
+      {
+        "feature": "Drug LogP",
+        "importance": 0.02975546595669875
+      },
+      {
+        "feature": "Solubility Enhancer Concentration",
+        "importance": 0.022428732845508424
+      },
+      {
+        "feature": "LA/GA",
+        "importance": 0.005818471759926868
+      }
+    ],
+    "importance_path": "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/feature_importance.png",
+    "partial_dependence_path": "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/partial_dependence.png",
+    "shap_path": "/Users/sonalingowda/Downloads/PharmaReleaseAI/reports/figures/shap_summary.png",
+    "interpretations": [
+      "Time is the dominant model-derived driver of Release.",
+      "Particle-size-related effects are sufficiently important to influence release control and sustained-delivery interpretation.",
+      "Drug loading contributes materially to prediction, indicating formulation composition has a measurable effect on release behaviour.",
+      "Encapsulation-efficiency-like variables appear mechanistically relevant, consistent with altered retention and diffusion behaviour.",
+      "Polymer-related inputs rank among the important predictors, supporting their role in modulating barrier properties and release kinetics."
+    ]
+  }
+}
