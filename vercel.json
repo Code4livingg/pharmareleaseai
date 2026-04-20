@@ -1,11 +1,17 @@
+cat > vercel.json <<EOF
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": null,
-  "installCommand": "pip install -r requirements.txt",
-  "devCommand": "streamlit run app.py --server.port=3000 --server.address=0.0.0.0",
-  "functions": {
-    "api/**/*.py": {
-      "excludeFiles": "{notebooks/**,data/raw/**,__pycache__/**,reports/figures/**,.mplconfig/**,.streamlit/**,*.pdf}"
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.py"
+    }
+  ]
 }
+EOF
